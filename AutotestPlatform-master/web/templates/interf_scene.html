@@ -1,0 +1,89 @@
+{% extends "layout.html" %}
+{% block body %}
+<script src="{{url_for('static', filename='scene.js')}}"></script>
+
+<div class="row">
+	<div class="col-md-1"></div>
+	<div class="col-md-10"><h3>多接口 场景编写</h3></div>
+</div>
+<div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-10" style="background:#FFF;border-radius:10px;">
+    <div class="row" style="height:20px;"></div>
+    <form class="form-inline">
+      <div class="form-group">
+        <label>项目:</label>
+        <select class="form-control" name="select_set" id="project">
+            <option value="none">请选择项目</option>
+            {% for project in projects %}
+            <option value={{project}} class="dam">{{project}}</option>
+            {% endfor %}
+        </select>
+        &nbsp;&nbsp;&nbsp;&nbsp;<label>场景名称:</label>
+        <input type="text" class="form-control" placeholder="场景不能重名" id="scene_name">
+      </div>
+          <button class="btn btn-primary" id="new_scene" type="button">新 增</button>
+        <button id="send_alert" class="btn btn-lg" data-toggle="modal" data-target="#myModal" type="button" style="display:none"></button>
+      <div class="form-group" style="margin:0px 50px">
+        <label>场景查看:</label>
+        <select class="form-control" name="select_set" id="scene">
+            <option value="none">请选择场景</option>
+        </select>
+          <button class="btn btn-danger" id="del_scene" type="button">删 除</button>
+      </div>
+        <div class="form-group" style="margin:0px 50px">
+        <label>场景复制:</label>
+        <select class="form-control" id="scene_copy">
+            <option value="none">请选择场景</option>
+        </select>
+      </div>
+    </form>
+    <div class="row" style="height:20px;"></div>
+  </div>
+</div>
+<br>
+
+<div class="row" id="sence_data" style="display:none">
+    <div class="col-md-1"></div>
+    <div class="col-md-10" style="padding: 0px">
+    <div style="padding:0px 17px 0px 0px">
+        <table class="table table-condensed table-bordered" style="background:#FFF;table-layout:fixed;margin:0px" id="header">
+            <tr class="info" id=-1>
+                <td style="width:5%"><b>执行顺序</b></td>
+                <td style="width:10%"><b>接口名称</b></td>
+                <td style="width:20%"><b>请求参数 ( json格式 )</b></td>
+                <td style="width:20%"><b>校验参数 ( json格式 )</b></td>
+                <td style="width:10%"><b>中间变量 (多个,分隔)</b></td>
+                <td style="width:10%"><b>备注</b></td>
+                <td style="width:5%"><b>准备时间(s)</b></td>
+                <td style="width:10%"><b>调试结果</b></td>
+                <td align='center'>
+                    <button class="btn btn-danger" id="zmd">提交修改</button>
+                    <button class="btn btn-success" id="n" style="padding:0px 8px"><font size="4">+</font> </button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="height:540px;overflow-y:auto;overflow-x:hidden;" id='d'>
+      <table class="table table-condensed table-bordered" id="data" style="background:#FFF;table-layout:fixed;margin:0px;">
+          <tr class="info" id='case_params' style="display:none">
+              <td style="width:5%"><b>执行顺序</b></td>
+                <td style="width:10%"><b>接口名称</b></td>
+                <td style="width:20%"><b>请求参数 ( json格式 )</b></td>
+                <td style="width:20%"><b>校验参数 ( json格式 )</b></td>
+                <td style="width:10%"><b>中间变量 (多个,分隔)</b></td>
+                <td style="width:10%"><b>备注</b></td>
+                <td style="width:5%"><b>准备时间(s)</b></td>
+                <td style="width:10%"><b>调试结果</b></td>
+                <td align='center'>
+                    <button class="btn btn-danger" id="zmd">提交修改</button>
+                    <button class="btn btn-success" id="n" style="padding:0px 8px"><font size="4">+</font> </button>
+                </td>
+          </tr>
+      </table>
+    </div>
+    </div>
+
+</div>
+
+{% endblock %}
