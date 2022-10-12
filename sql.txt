@@ -1,0 +1,11 @@
+create sequence xcheck.generator_room_id increment by 1 minvalue 1 no maxvalue start with 10000;
+
+CREATE TABLE IF NOT EXISTS xcheck.test_case
+(
+    case_id integer NOT NULL DEFAULT nextval('xcheck.generator_room_id'::regclass),
+    case_name character(100) COLLATE pg_catalog."default",
+    user_id integer,
+    testinfor text COLLATE pg_catalog."default",
+    create_date timestamp without time zone,
+    CONSTRAINT test_case_pkey PRIMARY KEY (case_id)
+)
