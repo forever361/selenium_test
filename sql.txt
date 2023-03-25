@@ -9,3 +9,28 @@ CREATE TABLE IF NOT EXISTS xcheck.test_case
     create_date timestamp without time zone,
     CONSTRAINT test_case_pkey PRIMARY KEY (case_id)
 )
+
+
+
+
+@app.route('/update-data', methods=['POST'])
+def update_data():
+    data = request.json
+    print(data)
+    # TODO: Update data in the database
+    return jsonify(success=True, message='Data updated successfully')
+
+
+@app.route('/delete-data', methods=['POST'])
+def delete_data():
+    data = request.json
+    print(data)
+    # TODO: Update data in the database
+    return jsonify(success=True, message='Data deleted successfully')
+
+@app.route('/add-row', methods=['POST'])
+def add_row():
+    data = request.json
+    print(data)
+    # TODO: Update data in the database
+    return jsonify(success=True, message='Data updated successfully')
