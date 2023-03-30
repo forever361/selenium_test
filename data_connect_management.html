@@ -72,134 +72,219 @@
 
 
                 <!-- New Row Modal -->
-                <div class="modal fade" id="add-row-modal" tabindex="-1" aria-labelledby="add-row-modal-label"
-                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="add-row-modal-label">Add new connection</h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                            </div>
-                            <div class="modal-body">
-                                <form>
-                                    <div class="form-group">
-                                        <label for="new-row-name" class="col-form-label">Name:</label>
-                                        <input type="text" class="form-control" id="new-row-name">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="new-row-dbtype" class="col-form-label">Connection Type:</label>
-                                        <select class="form-control" id="new-row-dbtype">
-                                            <option>PostgreSQL</option>
-                                            <option>AliCloud</option>
-                                            <option>Oracle</option>
-                                            <option>DB2</option>
-                                            <option>GCP</option>
-                                            <option>API</option>
-                                            <option>Fileserver</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="new-row-type" class="col-form-label">Type:</label>
-                                        <select class="form-control" id="new-row-type">
-                                            <option>My connection</option>
-                                            <option>External connection</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="new-row-host" class="col-form-label">Host:</label>
-                                        <input type="text" class="form-control" id="new-row-host">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="new-row-library" class="col-form-label">Library:</label>
-                                        <input type="text" class="form-control" id="new-row-library">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="new-row-username" class="col-form-label">Username:</label>
-                                        <input type="text" class="form-control" id="new-row-username">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="new-row-pwd" class="col-form-label">Password:</label>
-                                        <input type="password" class="form-control" id="new-row-pwd">
-                                    </div>
+                <!--                <div class="modal fade" id="add-row-modal" tabindex="-1" aria-labelledby="add-row-modal-label"-->
+                <!--                     aria-hidden="true">-->
+                <!--                    <div class="modal-dialog modal-dialog-centered">-->
+                <!--                        <div class="modal-content">-->
+                <!--                            <div class="modal-header">-->
+                <!--                                <h5 class="modal-title" id="add-row-modal-label">Add new connection</h5>-->
+                <!--                                <button type="button" class="btn-close" data-bs-dismiss="modal"-->
+                <!--                                        aria-label="Close"></button>-->
+                <!--                            </div>-->
+                <!--                            <div class="modal-body">-->
+                <!--                                <form>-->
+                <!--                                    <div class="form-group">-->
+                <!--                                        <label for="new-row-name" class="col-form-label">Name:</label>-->
+                <!--                                        <input type="text" class="form-control" id="new-row-name">-->
+                <!--                                    </div>-->
+                <!--                                    <div class="form-group">-->
+                <!--                                        <label for="new-row-dbtype" class="col-form-label">Connection Type:</label>-->
+                <!--                                        <select class="form-control" id="new-row-dbtype">-->
+                <!--                                            <option>PostgreSQL</option>-->
+                <!--                                            <option>AliCloud</option>-->
+                <!--                                            <option>Oracle</option>-->
+                <!--                                            <option>DB2</option>-->
+                <!--                                            <option>GCP</option>-->
+                <!--                                            <option>API</option>-->
+                <!--                                            <option>Fileserver</option>-->
+                <!--                                        </select>-->
+                <!--                                    </div>-->
+                <!--                                    <div class="form-group">-->
+                <!--                                        <label for="new-row-type" class="col-form-label">Type:</label>-->
+                <!--                                        <select class="form-control" id="new-row-type">-->
+                <!--                                            <option>My connection</option>-->
+                <!--                                            <option>External connection</option>-->
+                <!--                                        </select>-->
+                <!--                                    </div>-->
+                <!--                                    <div class="form-group">-->
+                <!--                                        <label for="new-row-host" class="col-form-label">Host:</label>-->
+                <!--                                        <input type="text" class="form-control" id="new-row-host">-->
+                <!--                                    </div>-->
+                <!--                                    <div class="form-group">-->
+                <!--                                        <label for="new-row-library" class="col-form-label">Library:</label>-->
+                <!--                                        <input type="text" class="form-control" id="new-row-library">-->
+                <!--                                    </div>-->
+                <!--                                    <div class="form-group">-->
+                <!--                                        <label for="new-row-username" class="col-form-label">Username:</label>-->
+                <!--                                        <input type="text" class="form-control" id="new-row-username">-->
+                <!--                                    </div>-->
+                <!--                                    <div class="form-group">-->
+                <!--                                        <label for="new-row-pwd" class="col-form-label">Password:</label>-->
+                <!--                                        <input type="password" class="form-control" id="new-row-pwd">-->
+                <!--                                    </div>-->
 
-                                </form>
+                <!--                                </form>-->
+                <!--                            </div>-->
+                <!--                            <div class="modal-footer">-->
+                <!--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
+                <!--                                <button type="button" class="btn btn-primary" id="save-new-row">Save</button>-->
+                <!--                            </div>-->
+                <!--                        </div>-->
+                <!--                    </div>-->
+                <!--                </div>-->
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="add-row-modal"
+                     aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasRightLabel">Add new connection</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="new-row-name" class="col-form-label">Name:</label>
+                                <input type="text" class="form-control" id="new-row-name">
                             </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary" id="save-new-row">Save</button>
+                            <div class="form-group">
+                                <label for="new-row-dbtype" class="col-form-label">Connection Type:</label>
+                                <select class="form-control" id="new-row-dbtype">
+                                    <option>PostgreSQL</option>
+                                    <option>AliCloud</option>
+                                    <option>Oracle</option>
+                                    <option>DB2</option>
+                                    <option>GCP</option>
+                                    <option>API</option>
+                                    <option>Fileserver</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-row-type" class="col-form-label">Type:</label>
+                                <select class="form-control" id="new-row-type">
+                                    <option>My connection</option>
+                                    <option>External connection</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="new-row-host" class="col-form-label">Host:</label>
+                                <input type="text" class="form-control" id="new-row-host">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-row-library" class="col-form-label">Library:</label>
+                                <input type="text" class="form-control" id="new-row-library">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-row-username" class="col-form-label">Username:</label>
+                                <input type="text" class="form-control" id="new-row-username">
+                            </div>
+                            <div class="form-group">
+                                <label for="new-row-pwd" class="col-form-label">Password:</label>
+                                <input type="password" class="form-control" id="new-row-pwd">
+                            </div>
+
+                        </form>
+
+                        <div style="margin-top: 20px">
+                            <div style="width:80%; margin: auto; text-align: center">
+                                <button type="button" class="btn btn-danger" style="float: left" data-bs-dismiss="offcanvas">Close</button>
+                                <button type="button" class="btn btn-success" style="float: right" id="save-new-row">Save</button>
                             </div>
                         </div>
+
+
                     </div>
                 </div>
-
-
-                <div class="modal fade" id="loadingModal" tabIndex="-1" aria-labelledby="loadingModalLabel"
-                     aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-body text-center">
-                                <div class="spinner-border" role="status">
-                                    <span class="visually-hidden">Loading...</span>
-                                </div>
-                                <p>Please wait while testing the connection.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--      <input type="text" class="form-control form-control-input" id="exampleFormControlInput1" placeholder="输入内容">-->
-                <!--                <button id='add-new-row' type="button" data-bs-toggle="modal" data-bs-target="#add-row-modal"-->
-                <!--                        class="btn btn-primary">Add-->
-                <!--                </button>-->
-
-                <table class="table table-striped"
-                       id="table"
-                       data-toggle="table"
-                       data-height="570"
-                       data-url="data3.json"
-                       data-pagination="true"
-                       data-search="true"
-                       data-buttons-class="primary"
-                       data-buttons="buttons"
-                       data-sort-name="connect_id"
-                       data-sort-order="desc"
-
-                >
-                    <thead>
-                    <tr>
-                        <th data-field="connect_id" data-sortable="true" data-width="5" data-width-unit="%">ID
-                        </th>
-                        <th data-field="connect_name" data-formatter="nameFormatter" data-align="center">Connection Name
-                        </th>
-                        <th data-field="connect_type" data-formatter="typeFormatter" data-align="center">Type
-                        </th>
-                        <th data-field="dbtype" data-formatter="typeFormatter_db" data-width="18" data-width-unit="%"
-                            data-align="center">
-                            Connection Type
-                        </th>
-                        <th data-field="host" data-formatter="hostFormatter" data-align="center">Host
-                        </th>
-                        <th data-field="dblibrary" data-formatter="libraryFormatter" data-align="center">Library
-                        </th>
-                        <th data-field="username" data-formatter="userFormatter" data-align="center">Username</th>
-                        <th data-field="pwd" data-formatter="pwdFormatter" data-align="center">Password</th>
-                        <th data-formatter="actionFormatter">Operation</th>
-                        <th data-formatter="testFormatter" data-align="center">Test Connection</th>
-                    </tr>
-                    </thead>
-                </table>
-
             </div>
-
         </div>
+
+
+<!--        <div class="modal fade" id="loadingModal" tabIndex="-1" aria-labelledby="loadingModalLabel"-->
+<!--             aria-hidden="true">-->
+<!--            <div class="modal-dialog modal-dialog-centered">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-body text-center">-->
+<!--                        <div class="spinner-border" role="status">-->
+<!--                            <span class="visually-hidden">Loading...</span>-->
+<!--                        </div>-->
+<!--                        <p>Please wait while testing the connection.</p>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div id="dialog" class="modal fade" tabindex="-1">-->
+<!--            <div class="modal-dialog">-->
+<!--                <div class="modal-content">-->
+<!--                    <div class="modal-header">-->
+<!--                        <h5 class="modal-title">确认框</h5>-->
+<!--                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>-->
+<!--                    </div>-->
+<!--                    <div class="modal-body">-->
+<!--                        <p>Do you want to save changes to this document before closing?</p>-->
+<!--                        <p class="text-secondary"><small>If you don't save, your changes will be-->
+<!--                            lost.</small></p>-->
+<!--                    </div>-->
+<!--                    <div class="modal-footer">-->
+<!--                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">No</button>-->
+<!--                        <button id="conform" type="button" class="btn btn-success">Yes</button>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <!--      <input type="text" class="form-control form-control-input" id="exampleFormControlInput1" placeholder="输入内容">-->
+        <!--                <button id='add-new-row' type="button" data-bs-toggle="modal" data-bs-target="#add-row-modal"-->
+        <!--                        class="btn btn-primary">Add-->
+        <!--                </button>-->
+
+        <table class="table table-striped"
+               id="table"
+               data-toggle="table"
+               data-height="570"
+               data-url="data3.json"
+               data-pagination="true"
+               data-search="true"
+               data-buttons-class="primary"
+               data-buttons="buttons"
+               data-sort-name="connect_id"
+               data-sort-order="desc"
+
+        >
+            <thead>
+            <tr>
+                <th data-field="connect_id" data-sortable="true" data-width="5" data-width-unit="%">ID
+                </th>
+                <th data-field="connect_name" data-formatter="nameFormatter" data-align="center">Connection Name
+                </th>
+                <th data-field="connect_type" data-formatter="typeFormatter" data-align="center">Type
+                </th>
+                <th data-field="dbtype" data-formatter="typeFormatter_db" data-width="18" data-width-unit="%"
+                    data-align="center">
+                    Connection Type
+                </th>
+                <th data-field="host" data-formatter="hostFormatter" data-align="center">Host
+                </th>
+                <th data-field="dblibrary" data-formatter="libraryFormatter" data-align="center">Library
+                </th>
+                <th data-field="username" data-formatter="userFormatter" data-align="center">Username</th>
+                <th data-field="pwd" data-formatter="pwdFormatter" data-align="center">Password</th>
+                <th data-formatter="actionFormatter">Operation</th>
+                <th data-formatter="testFormatter" data-align="center">Test Connection</th>
+            </tr>
+            </thead>
+        </table>
 
     </div>
 
 </div>
 
+</div>
+
+</div>
+
 
 <script>
+
+    const $table = $('#table');
 
     function buttons() {
         return {
@@ -208,7 +293,10 @@
                 icon: 'bi bi-plus',
                 render: true,
                 event: function () {
-                    $('#add-row-modal').modal('show'); // 显示弹窗
+                    $('#add-row-modal').offcanvas('show');
+                    $('#table').bootstrapTable('refresh');
+
+
                 },
                 attributes: {
                     class: 'Add a new row to the table'
@@ -293,24 +381,28 @@
             '</div>'
     }
 
+
     function testFormatter(value, row, index) {
         return '<button  class="btn btn-sm btn-success test-connect" > Test Connection </button>'
     }
 
 
-    const $table = $('#table');
-
     $table.on('click', '.test-connect', function () {
+        const $btn = $(this);
         const $tr = $(this).closest('tr');
         const id = $tr.find('td:eq(0)').text();
-        $('#loadingModal').modal('show');
+        const $loadingBtn = $('<button class="btn btn-sm btn-primary"><span class="spinner-border spinner-border-sm" disabled></span> \n' +
+            '&nbsp; Connecting...</button>');
+        $btn.replaceWith($loadingBtn);
+        // $('#dialog').modal('show');
         $.ajax({
             url: '/test_connect',
             type: 'POST',
             data: JSON.stringify({id: id}),
             contentType: 'application/json',
             success: function (data) {
-                $('#loadingModal').modal('hide');
+                // $('#loadingModal').modal('hide');
+                $loadingBtn.replaceWith($btn);
                 if (data.success) {
                     toastr.success('connect successfully!');
                 } else {
@@ -318,12 +410,12 @@
                 }
             },
             error: function (error) {
-                $('#loadingModal').modal('hide');
+                // $('#loadingModal').modal('hide');
+                $loadingBtn.replaceWith($btn);
                 toastr.error('failed to connect. Please check the parameters.');
             }
         });
     });
-
 
     /////delete function
     function deleteRow($tr) {
@@ -350,24 +442,51 @@
     $table.on('click', '.delete-row', function () {
         const $tr = $(this).closest('tr');
 
-        bootbox.confirm({
-            message: 'Please confirm if you want to delete?',
-            buttons: {
-                confirm: {
-                    label: 'Yes',
-                    className: 'btn-success'
-                },
-                cancel: {
-                    label: 'No',
-                    className: 'btn-danger'
+        let dialog = bootbox.dialog({
+            title: 'Delete item!',
+            message: "<p>Please confirm if you want to delete? </p>",
+            centerVertical: true,
+            buttons:
+                {
+                    cancel: {
+                        label: "No",
+                        className: 'btn-danger',
+                        callback:
+                            function () {
+                                console.log('Custom cancel clicked');
+                            }
+                    },
+
+                    ok: {
+                        label: "Yes",
+                        className: 'btn-success',
+                        callback:
+                            function () {
+                                deleteRow($tr)
+                            }
+                    }
                 }
-            },
-            callback: function (result) {
-                if (result) {
-                    deleteRow($tr)
-                }
-            }
         });
+
+        // bootbox.confirm({
+        //     title: 'Delete item',
+        //     message: 'Please confirm if you want to delete?',
+        //     buttons: {
+        //         confirm: {
+        //             label: 'Yes',
+        //             className: 'btn-success'
+        //         },
+        //         cancel: {
+        //             label: 'No',
+        //             className: 'btn-danger'
+        //         }
+        //     },
+        //     callback: function (result) {
+        //         if (result) {
+        //             deleteRow($tr)
+        //         }
+        //     }
+        // });
 
     });
 
@@ -430,7 +549,7 @@
     $table.on('click', '.save-row', function () {
         const $tr = $(this).closest('tr');
         const $saveBtn = $(this);
-        const $editBtn = $('<button class="btn btn-sm btn-primary edit-row">Edit</button>');
+        const $editBtn = $('<button  class="btn btn-sm btn-primary edit-row" > <i class="bi bi-pencil-square"></i> </button>');
         $saveBtn.replaceWith($editBtn);
         $tr.find('input, select').prop('disabled', true);
         $tr.find('input, select').removeClass('editable');
@@ -443,9 +562,9 @@
 
     ////Add row function
 
-    $('#add-new-row').click(function () {
-        $('#add-row-modal').modal('show'); // 显示弹窗
-    })
+    // $('#add-new-row').click(function () {
+    //     $('#add-row-modal').modal('show'); // 显示弹窗
+    // })
 
 
     $('#save-new-row').click(function () {
@@ -473,9 +592,7 @@
 
         // Add the new row to the table
         $table.bootstrapTable('append', newRow);
-
-        // Hide the modal dialog
-        $('#add-row-modal').modal('hide');
+        
 
         // addRow function
         $.ajax({
@@ -493,11 +610,13 @@
             }),
             contentType: 'application/json',
             success: function () {
-                toastr.success('new row added successfully!');
-                $('#add-row-modal').modal('hide');
+                $('#add-row-modal').offcanvas('hide');
                 $('#table').bootstrapTable('refresh');
+                toastr.success('new row added successfully!');
             },
             error: function () {
+                $('#add-row-modal').offcanvas('hide');
+                $('#table').bootstrapTable('refresh');
                 toastr.error('failed to add new row!');
             }
         });
