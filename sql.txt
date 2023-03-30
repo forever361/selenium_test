@@ -1,0 +1,82 @@
+create sequence xcheck.generator_room_id increment by 1 minvalue 1 no maxvalue start with 10000;
+
+CREATE TABLE IF NOT EXISTS xcheck.test_case
+(
+    case_id integer NOT NULL DEFAULT nextval('xcheck.generator_room_id'::regclass),
+    case_name character(100) COLLATE pg_catalog."default",
+    user_id integer,
+    testinfor text COLLATE pg_catalog."default",
+    create_date timestamp without time zone,
+    CONSTRAINT test_case_pkey PRIMARY KEY (case_id)
+)
+
+
+
+
+@app.route('/update-data', methods=['POST'])
+def update_data():
+    data = request.json
+    print(data)
+    # TODO: Update data in the database
+    return jsonify(success=True, message='Data updated successfully')
+
+
+@app.route('/delete-data', methods=['POST'])
+def delete_data():
+    data = request.json
+    print(data)
+    # TODO: Update data in the database
+    return jsonify(success=True, message='Data deleted successfully')
+
+@app.route('/add-row', methods=['POST'])
+def add_row():
+    data = request.json
+    print(data)
+    # TODO: Update data in the database
+    return jsonify(success=True, message='Data updated successfully')
+
+
+
+
+
+data = 'c'
+
+if data == 'a':
+    print('a')
+elif data == 'b':
+    print('b')
+elif data == 'c':
+    print('c')
+elif data == 'd':
+    print('d')
+elif data == 'e':
+    print('e')
+elif data == 'f':
+    print('f')
+elif data == 'g':
+    print('g')
+
+
+def operation_a():
+    # do something
+    print('operation a')
+
+def operation_b():
+    # do something
+    print('operation b')
+
+def operation_c():
+    # do something
+    print('operation c')
+
+options = {
+    'a': operation_a,
+    'b': operation_b,
+    'c': operation_c
+}
+
+func = options.get(data, lambda: print('data does not match any condition'))
+func()
+
+
+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

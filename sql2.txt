@@ -1,0 +1,38 @@
+-- 生成指定长度的字符串
+create or replace function f_random_str(length INTEGER)
+returns character varying AS $$
+DECLARE
+    result varchar(50);
+BEGIN
+    SELECT array_to_string(ARRAY(SELECT chr((65 + round(random() * 25)) :: integer)
+    FROM generate_series(1,length)), '') INTO result;
+
+    return result;
+END;
+$$ LANGUAGE plpgsql;
+
+-- 随机中文
+create or replace function gen_hanzi(int) returns text as $$
+declare
+  res text;
+begin
+  if $1 >=1 then
+    select string_agg(chr(19968+(random()*20901)::int), '') into res from generate_series(1,$1);
+    return res;
+  end if;
+  return null;
+end;
+$$ language plpgsql strict;
+
+
+-- 创建测试表
+create table testdata(id integer,name varchar(20),course int,grade numeric(4,2),testtime date,note text);
+
+-- 插入测试数据
+insert into testdata
+select generate_series(1,10000000) as id,
+f_random_str(3+(random()*5)::integer) as name,
+(random()*100)::integer as course,
+(random()*99)::numeric(4,2) as grade,
+now() - ((random()*1000)::integer||' day')::interval as testtime,
+gen_hanzi(3+(random()*5)::integer) as note;
