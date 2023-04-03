@@ -5,12 +5,29 @@
 5.log是上拉
 6.有些图标需要引入新版本才能显示
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
-7.UI算是搞完了，现在剩下，前段逻辑，后端数据，上拉 添加，下拉 log。
+7.UI算是搞完了，现在剩下，前段逻辑，后端数据，上拉 添加，下拉 log。 单删，单run
 
-8.表设计,灌入数据
+8.表设计,灌入数据,select不太好整
+
+9. 右侧三个按钮，编辑，删除，运行
+
+
+
 job表
 job id, job name, job
 Job:source point, target point, source condition, target condition, select rules, custom rules,By fields
+
+{
+  "source point": "test-point4",
+  "target point": "test-point6",
+  "source condition": "condition111",
+  "target condition": "condition111",
+  "select rules": "Check-count",
+  "custom rules": "aaaa",
+  "fields": "testfields",
+}
+
+UPDATE xcheck.job_management set job='{"source_point": "test-point4","target_point": "test-point6","source_condition": "condition111","target_condition": "condition111","select_rules": "Check-count","custom_rules": "aaaa","fields": "testfields"}' where job_id=500 
  
 CREATE TABLE my_table (
   id SERIAL PRIMARY KEY,
@@ -22,14 +39,107 @@ INSERT INTO task VALUES ('{"source": "a3", "target": "b3"}');
 SELECT * FROM task WHERE task->>'source' = 'a3';
 
 
--- 创建测试表
-create table testdata(id integer,name varchar(20),course int,grade numeric(4,2),testtime date,note text);
 
--- 插入测试数据
-insert into testdata
-select generate_series(1,10000000) as id,
-f_random_str(3+(random()*5)::integer) as name,
-(random()*100)::integer as course,
-(random()*99)::numeric(4,2) as grade,
-now() - ((random()*1000)::integer||' day')::interval as testtime,
-gen_hanzi(3+(random()*5)::integer) as note;
+
+create sequence xcheck.generator_job_id increment by 1 minvalue 1 no maxvalue start with 500;
+
+CREATE TABLE IF NOT EXISTS xcheck.job_management
+(
+    job_id integer NOT NULL DEFAULT nextval('xcheck.generator_job_id'::regclass),
+    job_name character(200) COLLATE pg_catalog."default",
+    user_id integer,
+    job JSONB,
+    create_date timestamp without time zone,
+    PRIMARY KEY (job_id)
+)
+
+
+INSERT INTO xcheck.job_management(job_name,user_id,job) VALUES ('jobtest1',580515,'{"source": "a3", "target": "b3"}');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+create sequence xcheck.generator_connection_id increment by 1 minvalue 1 no maxvalue start with 10000;
+
+CREATE TABLE IF NOT EXISTS xcheck.connection_management
+(
+    connect_id integer NOT NULL DEFAULT nextval('xcheck.generator_connection_id'::regclass),
+    connect_name character(200) COLLATE pg_catalog."default",
+    user_id integer,
+	dbtype character(20) COLLATE pg_catalog."default",
+	connect_type character(50) COLLATE pg_catalog."default",
+	host character(100) COLLATE pg_catalog."default",
+	dblibrary character(100) COLLATE pg_catalog."default",
+	username character(100) COLLATE pg_catalog."default",
+	pwd character(100) COLLATE pg_catalog."default",
+    create_date timestamp without time zone,
+    PRIMARY KEY (connect_id)
+)
+
+
+
+create sequence xcheck.generator_point_id increment by 1 minvalue 1 no maxvalue start with 500;
+
+CREATE TABLE IF NOT EXISTS xcheck.point_management
+(
+    point_id integer NOT NULL DEFAULT nextval('xcheck.generator_point_id'::regclass),
+    point_name character(200) COLLATE pg_catalog."default",
+    user_id integer,
+    connect_id integer,
+    table_name character(200) COLLATE pg_catalog."default",
+    create_date timestamp without time zone,
+    PRIMARY KEY (point_id)
+)
+
+
+
+
+function makeAjaxRequest(url, method, data) {
+  return new Promise(function(resolve, reject) {
+    $.ajax({
+      url: url,
+      method: method,
+      data: data,
+      success: function(result) {
+        resolve(result);
+      },
+      error: function(error) {
+        reject(error);
+      }
+    });
+  });
+}
+
+makeAjaxRequest("first-url", "GET")
+  .then(function(result) {
+    // 第一个 AJAX 请求成功后执行下一个请求
+    return makeAjaxRequest("second-url", "POST", { data: "some data" });
+  })
+  .then(function(result) {
+    // 第二个 AJAX 请求成功后执行下一个请求
+    return makeAjaxRequest("third-url", "GET");
+  })
+  .then(function(result) {
+    // 第三个 AJAX 请求成功后执行下一个请求
+  })
+  .catch(function(error) {
+    console.error(error);
+  });
+
+
+
