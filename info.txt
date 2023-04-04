@@ -10,6 +10,25 @@
 8.表设计,灌入数据,select不太好整
 
 9. 右侧三个按钮，编辑，删除，运行
+run的时候，还是将data通过json传到后端，后端不用保存看看能不能直接跑起来。就想查数据一样。
+
+10. Add new testcase, 进来后空荡荡。。 可以写死一个card, 然后用户网里面填，填好后点击 save就跳到case的页面。
+
+
+def get_table_columns_str2(self, remove_col_list, pi):
+    columns = []
+    if ',' in pi:
+        exclude_list = pi.split(',')
+        for columnName in self.column_list:
+            if columnName[0] not in remove_col_list and columnName[0].upper() not in exclude_list:
+                columns.append(columnName[0].upper())
+    else:
+        for columnName in self.column_list:
+            if columnName[0] not in remove_col_list and columnName[0] != pi:
+                columns.append(columnName[0].upper())
+    res = ','.join(columns)
+    # self.logger.info('get_table_columns_str: ' + res)
+    return res
 
 
 
