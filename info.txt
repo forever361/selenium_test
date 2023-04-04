@@ -161,4 +161,16 @@ makeAjaxRequest("first-url", "GET")
   });
 
 
+df -h /home
+
+find /home -type f -size +500M -exec ls -lh {} \;
+
+
+ln -s /tmp/new_folder /home/db/old_folder # 创建软链接
+
+ln -s /dev/test111 /run/newname
+
+从磁盘充足的/dev/test111，创建一个链接到 /run/newname 
+
+
 
