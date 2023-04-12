@@ -9,10 +9,13 @@
 
 8.表设计,灌入数据,select不太好整
 
-9. 右侧三个按钮，编辑，删除，运行
+9. 右侧三个按钮，编辑，删除，运行，运行这个log先不做，以后想更好的方案，
+目前就是run变成转圈圈的running就好，完成后给个中间弹窗。
 run的时候，还是将data通过json传到后端，后端不用保存看看能不能直接跑起来。就想查数据一样。
 
 10. Add new testcase, 进来后空荡荡。。 可以写死一个card, 然后用户网里面填，填好后点击 save就跳到case的页面。
+
+11.优先级最高：点击run,弹出上拉log框，所有参数沿用之前。
 
 
 def get_table_columns_str2(self, remove_col_list, pi):
@@ -45,6 +48,21 @@ Job:source point, target point, source condition, target condition, select rules
   "custom rules": "aaaa",
   "fields": "testfields",
 }
+
+
+{
+                'job_name': job_name,
+                'job': {
+                    "source_point": source_point,
+                    "target_point": target_point,
+                    "source_condition": source_condition,
+                    "target_condition": target_condition,
+                    "select_rules": select_rules,
+                    "custom_rules": custom_rules,
+                    "fields": fields,
+                }
+
+
 
 UPDATE xcheck.job_management set job='{"source_point": "test-point4","target_point": "test-point6","source_condition": "condition111","target_condition": "condition111","select_rules": "Check-count","custom_rules": "aaaa","fields": "testfields"}' where job_id=500 
  
