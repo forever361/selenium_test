@@ -191,4 +191,33 @@ ln -s /dev/test111 /run/newname
 从磁盘充足的/dev/test111，创建一个链接到 /run/newname 
 
 
+    Determine functional requirements and design: First, the basic functions and design of the website need to be determined, including the user interface, API specifications, test cases, etc.
+
+    Choose development tools and technologies: Choose the appropriate development tools and technologies according to the requirements and design, such as front-end frameworks, back-end frameworks, databases, etc.
+
+    Set up the development environment: Set up the development environment, including installing and configuring development tools, setting up server environment, etc.
+
+    Implement front-end interface: Implement the front-end user interface according to the design, including page layout, style, interaction, etc.
+
+    Implement back-end API: Implement the back-end API according to the API specification, including interface design, data model, business logic, etc.
+
+    Test and debug: Perform unit testing, integration testing, and system testing to ensure that the website's functionality and performance meet the requirements.
+
+    Deploy and launch: Deploy the website to the production environment, configure domain names and servers, launch the website, and monitor and maintain it.
+
+
+
+    确定功能需求和设计：首先需要确定网站的基本功能和设计，包括用户界面、API规范、测试用例等。
+
+    选择开发工具和技术：根据需求和设计选择合适的开发工具和技术，例如前端框架、后端框架、数据库等。
+
+    搭建开发环境：搭建开发环境，包括安装和配置开发工具、搭建服务器环境等。
+
+    实现前端界面：根据设计实现前端用户界面，包括页面布局、样式、交互等。
+
+    实现后端API：根据API规范实现后端API，包括接口设计、数据模型、业务逻辑等。
+
+    进行测试和调试：进行单元测试、集成测试和系统测试，确保网站的功能和性能符合要求。
+
+    部署和上线：将网站部署到生产环境，配置域名和服务器等信息，上线网站并进行监控和维护。
 
