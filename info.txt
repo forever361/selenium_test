@@ -192,3 +192,8 @@ ln -s /dev/test111 /run/newname
 
 
 sudo kill $(sudo lsof -t -i:5555)
+
+pip3 install gunicorn
+gunicorn -v
+
+nohup gunicorn --preload -w 4 -b 0.0.0.0:5000 --access-logfile access.log --error-logfile error.log ginger:app
