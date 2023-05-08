@@ -17,6 +17,8 @@ run的时候，还是将data通过json传到后端，后端不用保存看看能
 
 11.优先级最高：点击run,弹出上拉log框，所有参数沿用之前。
 
+yum install libxml2-devel xmlsec1-devel xmlsec1-openssl-devel libtool-ltdl-devel
+
 
 def get_table_columns_str2(self, remove_col_list, pi):
     columns = []
