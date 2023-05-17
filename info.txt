@@ -199,3 +199,24 @@ pip3 install gunicorn
 gunicorn -v
 
 nohup gunicorn --preload -w 4 -b 0.0.0.0:5000 --access-logfile access.log --error-logfile error.log ginger:app
+
+
+role group
+user team
+
+about Teams
+https://learn.microsoft.com/en-us/microsoftteams/assign-roles-permissions
+
+
+有4个词
+每个词下面有解释
+
+然后有一个流程图说明4个词之间的关系
+
+
+多个user组成team：可以共享比如public test case, public connection, public point，
+group初步划分为：admin(role:administrator), data test（data-engineer:Full access, data-guest:View only）,web test（web-engineer:Full access, web-guest:View only）,API test（View only, Full access）,
+
+一个用户可以加入一个或者多个group,大权限覆盖小权限。
+
+
