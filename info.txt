@@ -192,3 +192,23 @@ ln -s /dev/test111 /run/newname
 
 
 
+
+    用户（User）：用户是指使用系统、服务或资源的个体或实体，可以是个人、组织、系统或其他实体。用户通过登录或访问凭据进行身份验证，并根据其角色和权限访问系统或资源。
+
+    团队（Team）：团队是由多个用户组成的集合，共同协作以实现共同的目标或完成特定任务。团队可以包括不同角色和技能的用户，他们共享资源和信息，相互合作以提高效率和成果。
+
+    组（Group）：组是一种将用户进行分类和管理的方式，通常基于共享的角色、权限或工作功能。一个组可以包含一个或多个用户，并为其提供共同的访问权限和功能。用户可以加入一个或多个组，以便根据其需求和职责来访问系统或资源。
+
+    角色（Role）：角色定义了用户在团队或组织中的职责、权限和访问级别。每个角色可以与一个或多个组相关联，并为具有该角色的用户提供相应的权限。角色可以是管理员、数据工程师、访客或其他自定义的职能。
+
+
+    用户 (User): A user refers to an individual or entity that uses a system, service, or resource. It can be a person, organization, system, or other entity. Users are authenticated through login or access credentials and access systems or resources based on their roles and permissions.
+
+    团队 (Team): A team is a collection of multiple users who collaborate to achieve common goals or complete specific tasks. Teams can include users with different roles and skills, sharing resources and information, and working together to improve efficiency and outcomes.
+
+    组 (Group): A group is a way of categorizing and managing users, typically based on shared roles, permissions, or job functions. A group can include one or multiple users and provides them with shared access permissions and functionalities. Users can join one or multiple groups to access systems or resources based on their needs and responsibilities.
+
+    角色 (Role): Roles define the responsibilities, permissions, and access levels of users within a team or organization. Each role can be associated with one or more groups and provides corresponding permissions to users with that role. Roles can be administrators, data engineers, guests with limited access, or other custom-defined functions.
+
+
+
