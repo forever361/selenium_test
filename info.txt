@@ -219,4 +219,6 @@ group初步划分为：admin(role:administrator), data test（data-engineer:Full
 
 一个用户可以加入一个或者多个group,大权限覆盖小权限。
 
+认证(authentication) 和授权(authorization)
+
 
