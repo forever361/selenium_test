@@ -3,6 +3,9 @@
 1. create sequence xcheck.generator_user_id increment by 1 minvalue 1 no maxvalue start with 590000;
 2. nextval('xcheck.generator_user_id'::regclass) 修改ID后面的default
 
+ALTER TABLE user
+ALTER COLUMN user_id SET DEFAULT nextval('xcheck.generator_user_id');
+
 ALTER TABLE xcheck."user"
 ADD COLUMN "staffid" integer;
 ADD COLUMN "team_ids" INTEGER[];
