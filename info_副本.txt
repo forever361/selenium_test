@@ -1,0 +1,60 @@
+
+ALTER TABLE xcheck."user"
+ADD COLUMN "team_ids" INTEGER[];
+
+
+create sequence xcheck.generator_team_id increment by 1 minvalue 1 no maxvalue start with 5000;
+
+CREATE TABLE IF NOT EXISTS xcheck.team
+(
+    team_id integer NOT NULL DEFAULT nextval('xcheck.generator_team_id'::regclass),
+    name character(200),
+    "group_ids" INTEGER[],
+    PRIMARY KEY (team_id)
+)
+
+CREATE TABLE IF NOT EXISTS xcheck.role
+(
+    role_id integer NOT NULL,
+    name character(200),
+    PRIMARY KEY (role_id)
+)
+
+
+CREATE TABLE IF NOT EXISTS xcheck.group
+(
+    group_id integer NOT NULL,
+    name character(200),
+    role_ids INTEGER[],
+    PRIMARY KEY (group_id)
+)
+
+
+INSERT INTO xcheck.group (group_id, name, role_ids) VALUES
+(1000, 'admin', '{100}'),
+(1001, 'guest', '{101}'),
+(1002, 'data_test', '{102,103}'),
+(1003, 'AP_test', '{104,105}'),
+(1004, 'web_test', '{106,107}'),
+(1005, 'DELOS_test', '{105}');
+
+
+INSERT INTO xcheck.role (role_id, name) VALUES
+(100, 'admin'),
+(101, 'guest'),
+(102, 'data_engineer'),
+(103, 'data_operator'),
+(104, 'API_engineer'),
+(105, 'API_operator'),
+(106, 'web_engineer'),
+(107, 'web_operator');
+
+
+
+
+
+
+
+
+
+
