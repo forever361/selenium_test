@@ -84,6 +84,23 @@ WHERE group_id = 1005;
 
 
 
+def set_avatar(self, url):
+    avatar_query = """UPDATE xcheck.user
+                      SET avatar_url = '{}'
+                      WHERE username = '{}'""".format(url, self.username)
+    self.cursor.execute(avatar_query)
+
+
+def generate_avatar_url(number):
+    base_url = "https://aimei.cn/{}/{:d}.jpg"
+    prefix = str(number)[:4]
+    url = base_url.format(prefix, number)
+    return url
+
+# 生成 URL
+number = 45178280
+url = generate_avatar_url(number)
+
 
 
 
