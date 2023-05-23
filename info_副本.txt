@@ -58,6 +58,31 @@ INSERT INTO xcheck.role (role_id, name) VALUES
 (106, 'web_engineer'),
 (107, 'web_operator');
 
+UPDATE xcheck.group
+SET name = 'AdminGroup'
+WHERE group_id = 1000;
+
+UPDATE xcheck.group
+SET name = 'Guest'
+WHERE group_id = 1001;
+
+UPDATE xcheck.group
+SET name = 'DataTestGroup'
+WHERE group_id = 1002;
+
+UPDATE xcheck.group
+SET name = 'APITestGroup'
+WHERE group_id = 1003;
+
+UPDATE xcheck.group
+SET name = 'WebTestGroup'
+WHERE group_id = 1004;
+
+UPDATE xcheck.group
+SET name = 'DelosTestGroup'
+WHERE group_id = 1005;
+
+
 
 
 
