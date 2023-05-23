@@ -1,6 +1,12 @@
 
+可以将xcheck.user表也变成ID自增
+1. create sequence xcheck.generator_user_id increment by 1 minvalue 1 no maxvalue start with 590000;
+2. nextval('xcheck.generator_user_id'::regclass) 修改ID后面的default
+
 ALTER TABLE xcheck."user"
+ADD COLUMN "staffid" integer;
 ADD COLUMN "team_ids" INTEGER[];
+ADD COLUMN "avatarUrl" character(300);
 
 
 create sequence xcheck.generator_team_id increment by 1 minvalue 1 no maxvalue start with 5000;
