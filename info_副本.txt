@@ -102,6 +102,20 @@ number = 45178280
 url = generate_avatar_url(number)
 
 
+INSERT INTO xcheck.team (team_id, team_name, role_ids)
+VALUES
+(3000, 'admin', '{1000}'),
+(3001, 'guest', '{1001}'),
+(3002, 'DELOS_Users', '{1005}'),
+(3003, 'china_data_solution', '{1002,1005}');
+
+
+INSERT INTO xcheck.user (team_ids)
+VALUES
+('{3002}');
+
+
+
 
 
 
