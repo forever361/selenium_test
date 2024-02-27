@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    parameters {
+        string(defaultValue: '', description: 'SSH密码', name: 'SSH_PASSWORD')
+    }
+
+    stages {
+        stage('Deploy') {
+            steps {
+                script {
+                    // 定义目标Linux服务器的用户名和IP地址
+                    def username = 'realtime'
+                    def host = '172.16.208.154'
+                    def command = 'echo Hello from Jenkins'
+
+                    // 获取用户输入的密码
+                    def password = params.SSH_PASSWORD
+
+                    // 执行SSH命令，使用sshpass进行密码认证
+                    sh "sshpass -p '${password}' ssh -o StrictHostKeyChecking=no ${username}@${host} '${command}'"
+                }
+            }
+        }
+    }
+}
