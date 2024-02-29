@@ -16,3 +16,12 @@ fi
 
 sh "sshpass -p '${password}' ssh -t -t -o StrictHostKeyChecking=no ${username}@${host} \"echo '${password}' | sudo -S ${command}\""
 
+
+#!/bin/bash
+
+echo "Trying to kill processes..."
+/bin/kill -9 $(lsof -t -i:8889)
+echo "Command executed with exit code: $?"
+
+
+nohup /app/tanos/application/anaconda3/envs/env1/bin/gunicorn run:app -c gunicorn_config.py
