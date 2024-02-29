@@ -12,3 +12,7 @@ else
     echo "仓库不存在，执行 git clone..."
     git clone git@gitee.com:kundwong/Flask_tp.git "$repo_path"
 fi
+
+
+sh "sshpass -p '${password}' ssh -t -t -o StrictHostKeyChecking=no ${username}@${host} \"echo '${password}' | sudo -S ${command}\""
+
