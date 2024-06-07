@@ -1,3 +1,12 @@
+Here are the conclusions of today's discussion:
+
+1.Support file (csv) as the source for validation scenarios.
+2.For Metadata validation, users can configure the rules for the source and target themselves.
+3.Consider better solutions for NFT in the future.
+
+Let me know if I overlooked any important points，thanks!
+
+
 1.EDIT DELETE RESULT 可以修改为第一个字母大写。
 2.没有的style全部可以删掉
 3.每个都有save run,最后还有个Batch jobs run
