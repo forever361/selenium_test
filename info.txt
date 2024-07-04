@@ -1,17 +1,4 @@
-data-validation -v validate column   --source-conn or -sc P1    --target-conn or -tc P1  -tbls datatest.target_table=datatest.target_table2
-https://github.com/GoogleCloudPlatform/professional-services-data-validator/blob/develop/docs/examples.md#run-a-row-hash-validation-for-all-rows
-
-Short Weekly Report
-1.Dowsure QA:  The output format of Baihang API is inconsistent. The output done by Kaber is more standardized. It is recommended that developers test with each other in the future
-2.Pudao QA:  Users reported compatibility issues with the Edge browser. Last month, the company's IT department had already notified that Edge should be set to open with the Chrome engine by default. Everyone on our side has switched to the Chrome engine, but it's unclear why users are still using the IE engine. Yesterday, we asked John to inform users to use the Chrome browser.
-3.TRMF:
-(1)Completed XXXX
-(2)Completed XXXX
-(3)With Bill scheduled the automation testing support for CDP TRMF together
-(4)Reviewed the TRMF goals with John for Q3 to ensure completion in Q3
-4.New joiner: Xavier has already gotten the hang of backend development with Python and can meet the expectations.
-
-
+new_string = ','.join(col for col in old_string.split(',') if col not in ('col2', 'col4'))
 
 1.EDIT DELETE RESULT 可以修改为第一个字母大写。
 2.没有的style全部可以删掉
