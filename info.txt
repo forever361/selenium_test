@@ -94,6 +94,13 @@ scenarios:
 reporting:
 - module: final-stats
 
+modules:
+  jmeter:
+    properties:
+      jmeter.save.saveservice.output_format: xml
+      jmeter.save.saveservice.response_data.on_error: false
+    jtl:
+      filename: test_results.jtl
 
 
 
