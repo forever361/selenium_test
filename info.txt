@@ -29,6 +29,75 @@ modules:
         download-link: 'https://mirrors.tuna.tsinghua.edu.cn/apache//jmeter/binaries/apache-jmeter-{version}.zip'# 下载地址
         version: 5.2.1# 版本号
 
+
+import json
+import yaml
+
+# 定义YAML配置，直接插入JSON对象的键值对
+yaml_config = {
+    'version': '1.0',
+    'execution': [{'scenario': 'simple-scenario'}],
+    'scenarios': {
+        'simple-scenario': {
+            'requests': [
+                {
+                    'url': 'http://example.com/api/resource',
+                    'method': 'POST',
+                    'headers': {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Bearer your_token'
+                    },
+                    'body': {
+                        "key1": "value1",
+                        "key2": "value2"
+                    },
+                    'assert': [
+                        {'contains': ['success'], 'subject': 'body'},
+                        {'contains': ['200'], 'subject': 'http-code'}
+                    ]
+                }
+            ]
+        }
+    },
+    'reporting': [{'module': 'final-stats'}]
+}
+
+# 将配置写入YAML文件
+with open('config.yml', 'w') as yaml_file:
+    yaml.dump(yaml_config, yaml_file, default_flow_style=False)
+
+print("YAML配置文件已生成：config.yml")
+
+
+
+version: '1.0'
+execution:
+- scenario: simple-scenario
+scenarios:
+  simple-scenario:
+    requests:
+    - url: http://example.com/api/resource
+      method: POST
+      headers:
+        Content-Type: application/json
+        Authorization: Bearer your_token
+      body:
+        key1: value1
+        key2: value2
+      assert:
+      - contains:
+        - success
+        subject: body
+      - contains:
+        - '200'
+        subject: http-code
+reporting:
+- module: final-stats
+
+
+
+
+
 new_string = ','.join(col for col in old_string.split(',') if col not in ('col2', 'col4'))
 
 1.EDIT DELETE RESULT 可以修改为第一个字母大写。
