@@ -1,7 +1,8 @@
- settings:
+是不是应该这样？
+settings:
   env:
-    BASE_DIR: E:\Taurus  # 脚本目录
-  artifacts-dir: E:\Taurus\artifacts\simple1\%Y-%m-%d_%H-%M  # 保存文件路径
+    BASE_DIR: E:\Taurus   # 脚本目录
+  artifacts-dir: E:\Taurus\artifacts\simple1\%Y-%m-%d_%H-%M  # 保存路径
 
 execution:
 - concurrency: 10  # 并发线程数
@@ -14,14 +15,14 @@ execution:
 
 scenarios:
   simple1:
-    script: '${BASE_DIR}/build-web-test-plan.jmx'  # JMeter脚本路径
-    listeners:
-      - jp@gc - Transactions per Second
+    script: '${BASE_DIR}/build-web-test-plan.jmx'  # 脚本路径
 
 modules:
   jmeter:
     download-link: 'https://mirrors.tuna.tsinghua.edu.cn/apache//jmeter/binaries/apache-jmeter-{version}.zip' # 下载地址
-    version: 5.2.1  # JMeter版本号
+    version: 5.2.1  # 版本号
+    properties:
+      jmeter.save.saveservice.interval: 1000
 
 reporting:
 - module: final-stats   # 摘要报告
