@@ -2,6 +2,8 @@
 https://dl.google.com/linux/chrome/rpm/stable/x86_64/google-chrome-stable-136.0.7103.113-1.x86_64.rpm
 http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_136.0.7103.113-1_amd64.deb
 
+https://mirrors.aliyun.com/google-chrome/google-chrome/google-chrome-stable-115.0.5790.102-1.x86_64.rpm
+
 136.0.7103.113-1
 
 
